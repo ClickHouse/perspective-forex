@@ -1,92 +1,176 @@
 {
-    "version": "3.0.0",
-    "plugin": "Datagrid",
-    "plugin_config": {
-      "columns": {
-        "spread": {
-          "column_size_override": 120.3515625
+    "real_time": {
+        "version": "3.0.0",
+        "plugin": "Datagrid",
+        "plugin_config": {
+          "columns": {
+            "spread": {
+              "column_size_override": 120.3515625
+            }
+          },
+          "edit_mode": "READ_ONLY",
+          "scroll_lock": false
+        },
+        "columns_config": {
+          "ask": {
+            "number_format": {
+              "minimumFractionDigits": 2,
+              "maximumFractionDigits": 6
+            }
+          },
+          "(-)chg": {
+            "number_fg_mode": "bar",
+            "fg_gradient": 0.6,
+            "number_format": {
+              "minimumFractionDigits": 2,
+              "maximumFractionDigits": 6
+            }
+          },
+          "chg": {
+            "number_bg_mode": "gradient",
+            "bg_gradient": 1,
+            "number_format": {
+              "minimumFractionDigits": 1,
+              "maximumFractionDigits": 6
+            }
+          },
+          "spread": {
+            "number_format": {
+              "minimumFractionDigits": 2,
+              "maximumFractionDigits": 6
+            }
+          },
+          "(+)chg": {
+            "number_fg_mode": "bar",
+            "fg_gradient": 0.6,
+            "number_format": {
+              "minimumFractionDigits": 2,
+              "maximumFractionDigits": 6
+            }
+          },
+          "bid": {
+            "number_format": {
+              "minimumFractionDigits": 2,
+              "maximumFractionDigits": 6
+            }
+          }
+        },
+        "settings": true,
+        "theme": "Pro Dark",
+        "title": "Forex",
+        "group_by": [
+          "base_quote"
+        ],
+        "split_by": [],
+        "columns": [
+          "bid",
+          "ask",
+          "spread",
+          "(-)chg",
+          "chg",
+          "(+)chg"
+        ],
+        "filter": [],
+        "sort": [
+          [
+            "chg",
+            "asc"
+          ]
+        ],
+        "expressions": {
+          "(-)chg": "if(\"chg\"<0){\"chg\"}else{0}",
+          "(+)chg": "if(\"chg\">0){\"chg\"}else{0}"
+        },
+        "aggregates": {
+          "(-)chg": "avg",
+          "spread": "last",
+          "ask": "last",
+          "bid": "last",
+          "chg": "avg",
+          "(+)chg": "avg"
         }
-      },
-      "edit_mode": "READ_ONLY",
-      "scroll_lock": false
     },
-    "columns_config": {
-      "ask": {
-        "number_format": {
-          "minimumFractionDigits": 2,
-          "maximumFractionDigits": 6
+    "all_rows": {
+        "version": "3.0.0",
+        "plugin": "Datagrid",
+        "plugin_config": {
+          "columns": {
+            "spread": {
+              "column_size_override": 120.3515625
+            }
+          },
+          "edit_mode": "READ_ONLY",
+          "scroll_lock": false
+        },
+        "columns_config": {
+          "ask": {
+            "number_format": {
+              "minimumFractionDigits": 2,
+              "maximumFractionDigits": 6
+            }
+          },
+          "(-)chg": {
+            "number_fg_mode": "bar",
+            "fg_gradient": 0.6,
+            "number_format": {
+              "minimumFractionDigits": 2,
+              "maximumFractionDigits": 6
+            }
+          },
+          "chg": {
+            "number_bg_mode": "gradient",
+            "bg_gradient": 1,
+            "number_format": {
+              "minimumFractionDigits": 1,
+              "maximumFractionDigits": 6
+            }
+          },
+          "spread": {
+            "number_format": {
+              "minimumFractionDigits": 2,
+              "maximumFractionDigits": 6
+            }
+          },
+          "(+)chg": {
+            "number_fg_mode": "bar",
+            "fg_gradient": 0.6,
+            "number_format": {
+              "minimumFractionDigits": 2,
+              "maximumFractionDigits": 6
+            }
+          },
+          "bid": {
+            "number_format": {
+              "minimumFractionDigits": 2,
+              "maximumFractionDigits": 6
+            }
+          }
+        },
+        "settings": false,
+        "theme": "Pro Dark",
+        "title": "Forex",
+        "group_by": [
+          "base_quote"
+        ],
+        "split_by": [],
+        "columns": [
+          "bid",
+          "ask",
+          "spread"
+        ],
+        "filter": [],
+        "sort": [
+          [
+            "last_update",
+            "desc"
+          ]
+        ],
+        "expressions": {
+        },
+        "aggregates": {
+          "spread": "last",
+          "ask": "last",
+          "bid": "last"
         }
-      },
-      "(-)chg": {
-        "number_fg_mode": "bar",
-        "fg_gradient": 0.6,
-        "number_format": {
-          "minimumFractionDigits": 2,
-          "maximumFractionDigits": 6
-        }
-      },
-      "chg": {
-        "number_bg_mode": "gradient",
-        "bg_gradient": 1,
-        "number_format": {
-          "minimumFractionDigits": 1,
-          "maximumFractionDigits": 6
-        }
-      },
-      "spread": {
-        "number_format": {
-          "minimumFractionDigits": 2,
-          "maximumFractionDigits": 6
-        }
-      },
-      "(+)chg": {
-        "number_fg_mode": "bar",
-        "fg_gradient": 0.6,
-        "number_format": {
-          "minimumFractionDigits": 2,
-          "maximumFractionDigits": 6
-        }
-      },
-      "bid": {
-        "number_format": {
-          "minimumFractionDigits": 2,
-          "maximumFractionDigits": 6
-        }
-      }
-    },
-    "settings": true,
-    "theme": "Pro Dark",
-    "title": "Forex",
-    "group_by": [
-      "base_quote"
-    ],
-    "split_by": [],
-    "columns": [
-      "bid",
-      "ask",
-      "spread",
-      "(-)chg",
-      "chg",
-      "(+)chg"
-    ],
-    "filter": [],
-    "sort": [
-      [
-        "chg",
-        "asc"
-      ]
-    ],
-    "expressions": {
-      "(-)chg": "if(\"chg\"<0){\"chg\"}else{0}",
-      "(+)chg": "if(\"chg\">0){\"chg\"}else{0}"
-    },
-    "aggregates": {
-      "(-)chg": "avg",
-      "spread": "last",
-      "ask": "last",
-      "bid": "last",
-      "chg": "avg",
-      "(+)chg": "avg"
-    }
-  }
-  
+    }      
+}
